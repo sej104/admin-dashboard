@@ -42,9 +42,16 @@ a {
     color: inherit;
 }
 
+button {
+    cursor: pointer;
+}
+
 /* Content styling */
 :root {
     --sidebar-bg-color: #149add;
+    --box-shadow-color: #d6d6d6;
+    --search-bar-bg-color: #d2e0ea;
+
 }
 
 .main-grid {
@@ -94,9 +101,69 @@ a {
 }
 
 .header {
-    background-color: pink;
+    background-color: #fff;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    padding: 0 30px;
+}
+
+.header-top-row {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.header-top-row button {
+    border: none;
+    background: none;
+}
+
+.search-bar {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-bar img {
+    height: 20px;
+}
+
+.search-bar input {
+    appearance: none;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--search-bar-bg-color);
+    padding: 5px 15px;
+    width: 90%;
+}
+
+.user-panel {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    font-weight: bold
+}
+
+.user-panel div:nth-child(1) img {
+    height: 20px;
+}
+
+.user-panel div:nth-child(2) img {
+    height: 40px;
+}
+
+.header-bottom-row {
+    grid-row: 2;
+}
+
+.welcome-panel img {
+    height: 20px;
 }
 
 .main-content {
-    background-color:rgb(224, 198, 134);
+    box-shadow: inset 0px 2px 13px 1px var(--box-shadow-color);
+    background-color: #fff;
 }
