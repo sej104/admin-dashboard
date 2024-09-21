@@ -44,11 +44,12 @@ a {
 
 button {
     cursor: pointer;
+    appearance: none;
 }
 
 /* Content styling */
 :root {
-    --sidebar-bg-color: #149add;
+    --sidebar-bg-color: #1291d1;
     --box-shadow-color: #d6d6d6;
     --search-bar-bg-color: #d2e0ea;
 
@@ -104,13 +105,13 @@ button {
     background-color: #fff;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    padding: 0 30px;
+    padding: 5px 50px 20px 50px;
 }
 
 .header-top-row {
     grid-row: 1;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .header-top-row button {
@@ -135,15 +136,15 @@ button {
     border-radius: 20px;
     background-color: var(--search-bar-bg-color);
     padding: 5px 15px;
-    width: 90%;
+    width: 100%;
 }
 
 .user-panel {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    justify-content: center;
+    justify-content: end;
     align-items: center;
-    gap: 25px;
+    gap: 20px;
     font-weight: bold
 }
 
@@ -157,10 +158,48 @@ button {
 
 .header-bottom-row {
     grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 10px
+}
+
+.welcome-panel {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+    font-weight: bold;
 }
 
 .welcome-panel img {
-    height: 20px;
+    height: 55px;
+}
+
+.welcome-panel p:nth-child(1) {
+    font-size: 0.8rem;
+}
+
+.welcome-panel p:nth-child(2) {
+    font-size: 1.2rem;
+}
+
+.action-panel {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 25px;
+    align-items: center;
+    justify-content: end;
+}
+
+.action-panel button {
+    border: none;
+    background-color: var(--sidebar-bg-color);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    height: 35px;
+    width: 75px;
+    font-size: 0.8rem;
 }
 
 .main-content {
