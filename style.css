@@ -45,13 +45,15 @@ a {
 button {
     cursor: pointer;
     appearance: none;
+    border: none;
 }
 
 /* Content styling */
 :root {
     --sidebar-bg-color: #1291d1;
     --box-shadow-color: #d6d6d6;
-    --search-bar-bg-color: #d2e0ea;
+    --main-content-bg-color: #d2e0ea;
+    --card-border-color: #eab308;
 
 }
 
@@ -139,7 +141,7 @@ button {
     appearance: none;
     border: none;
     border-radius: 20px;
-    background-color: var(--search-bar-bg-color);
+    background-color: var(--main-content-bg-color);
     padding: 5px 15px;
     width: 100%;
 }
@@ -209,5 +211,55 @@ button {
 
 .main-content {
     box-shadow: inset 0px 2px 13px 1px var(--box-shadow-color);
+    background-color: var(--main-content-bg-color);
+    padding: 40px 20px 0;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
+
+.card-container {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    grid-auto-rows: 175px;
+    gap: 20px;
+}
+
+.card {
+    border-left: 7px solid var(--card-border-color);
+    border-radius: 7px;
+    padding: 20px 20px 15px;
+    box-shadow: 0px 2px 20px 1px var(--box-shadow-color);
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+}
+
+.card div:nth-child(2) {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: end;
+    align-items: center;
+    gap: 15px;
+}
+
+.card img {
+    height: 20px;
+}
+
+.card-title {
+    font-size: 0.9rem;
+}
+
+.card-content {
+    font-size: 0.85rem;
+    color: #595959;
+}
+
+.card, .card button {
     background-color: #fff;
+}
+
+.announcements, .trending {
+    grid-column: 2;
 }
