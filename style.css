@@ -276,7 +276,7 @@ button {
 .announcements-trending-container {
     grid-column: 2;
     display: grid;
-    grid-template-rows: auto auto 1fr;
+    grid-template-rows: 1fr auto 265px;
 }
 
 .announcements {
@@ -308,8 +308,18 @@ button {
 }
 
 .trending {
-    padding: 20px 25px 0px;
+    padding: 20px 25px;
+    overflow: auto;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.trending::-webkit-scrollbar {
+    display: none;
+}
+
 
 .trending img {
     height: 44px;
@@ -320,7 +330,11 @@ button {
     grid-template-columns: auto 1fr;
     gap: 15px;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+}
+
+.trending > div:last-child {
+    margin-bottom: 0px;
 }
 
 .user-content {
